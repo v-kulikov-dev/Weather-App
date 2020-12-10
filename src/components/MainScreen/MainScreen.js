@@ -1,5 +1,7 @@
 import { useState } from "react";
 import HourlyForecast from "../HourlyForecast";
+import CurrentWeather from "../CurrentWeather";
+import AdditionallyDashboard from "../AdditionallyDashboard";
 import keys from "../../helpers/keys";
 
 const api = {
@@ -63,16 +65,9 @@ const MainScreen = () => {
         </div>
         {typeof weather.main !== "undefined" && (
           <div className="sul-box-raised-3 container">
-            <div className="sul-box-raised-3 location-container">
-              <div className="location">
-                {weather.name}, {weather.sys.country}
-              </div>
-              <div className="temperature">
-                {Math.round(weather.main.temp)}°C
-              </div>
-              <div className="weather">{weather.weather[0].description}</div>
-            </div>
+            <CurrentWeather weather={weather} />
             <HourlyForecast coord={weather.coord} api={api} />
+            <AdditionallyDashboard weather={weather} />
           </div>
         )}
       </main>
