@@ -1,0 +1,11 @@
+.forecast-container {
+  display: flex;
+  text-align: center;
+  height: 250px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.hour-item-wrapper {
+  flex: 1;
+}

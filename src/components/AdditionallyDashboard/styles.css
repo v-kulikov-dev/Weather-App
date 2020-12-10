@@ -1,0 +1,15 @@
+.additionally-wrapper {
+  margin: 0 30px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.additionally-mark {
+  font-size: 20px;
+}
+
+.additionally-key {
+  margin-top: 5px;
+  font-weight: bold;
+}

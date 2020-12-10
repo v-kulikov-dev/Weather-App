@@ -1,0 +1,22 @@
+.location-container {
+  width: 75%;
+  margin: auto;
+  border-radius: 10px;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.location {
+  font-size: 35px;
+}
+
+.temperature {
+  font-size: 40px;
+}
+
+.weather {
+  font-size: 20px;
+}

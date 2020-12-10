@@ -1,4 +1,5 @@
 import { UTCToTime } from "../../helpers/datePicker";
+import "./styles.css";
 
 const AdditionallyDashboard = ({ weather }) => {
   return (

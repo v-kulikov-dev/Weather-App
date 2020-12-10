@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import HourItem from "../HourItem";
+import "./styles.css";
 
 const HourlyForecast = ({ coord, api }) => {
   const [hourlyWeather, setHourlyWeather] = useState([]);
@@ -17,7 +18,11 @@ const HourlyForecast = ({ coord, api }) => {
   return (
     <div className="forecast-container sul-box-inset-1">
       {hourlyWeather.map((hour) => {
-        return <HourItem hour={hour} api={api} />;
+        return (
+          <div key={hour.dt} className="hour-item-wrapper">
+            <HourItem hour={hour} api={api} />
+          </div>
+        );
       })}
     </div>
   );

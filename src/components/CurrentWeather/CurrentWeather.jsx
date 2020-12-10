@@ -1,3 +1,5 @@
+import "./styles.css";
+
 const CurrentWeather = ({ weather }) => {
   return (
     <div className="sul-box-raised-3 location-container">

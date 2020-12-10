@@ -3,6 +3,7 @@ import HourlyForecast from "../HourlyForecast";
 import CurrentWeather from "../CurrentWeather";
 import AdditionallyDashboard from "../AdditionallyDashboard";
 import keys from "../../helpers/keys";
+import "./styles.css";
 
 const api = {
   key: keys.API_KEY,
@@ -42,7 +43,7 @@ const MainScreen = () => {
   return (
     <div className="app-container">
       <header className="sul-box-raised-2">
-        <h1 className="title">Weather App.</h1>
+        <h1>Weather App.</h1>
         <input
           type="checkbox"
           className="sul-checkbox-type-2"

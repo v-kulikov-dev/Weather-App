@@ -1,11 +1,12 @@
 import moment from "moment";
+import "./styles.css";
 
-const HourItem = ({ hour, api }) => {
+const HourItem = ({ hour, api, key }) => {
   const time = moment(hour.dt * 1000).format("hh a");
   const image = `${api.image}${hour.weather[0].icon}@2x.png`;
 
   return (
-    <div className="forecast-item sul-box-raised-1 with-hover" key={hour.id}>
+    <div className="forecast-item sul-box-raised-1 with-hover">
       <div>{time}</div>
       <div className="item-temperature">{Math.round(hour.temp)}°C</div>
       <div className="weather-logo">
