@@ -19,7 +19,6 @@ const MainScreen = () => {
   const [weather, setWeather] = useState({});
   const [errors, setErrors] = useState("");
 
-  console.log("weather", weather);
   const responsiveConfig = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

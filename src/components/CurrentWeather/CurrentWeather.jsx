@@ -2,8 +2,6 @@ import moment from "moment";
 import "./styles.css";
 
 const CurrentWeather = ({ weather, info }) => {
-  console.log("weather", weather);
-  console.log("info", info);
   return (
     <div>
       <div className="sul-box-raised-3 location-container">
