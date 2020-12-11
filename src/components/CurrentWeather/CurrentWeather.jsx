@@ -1,18 +1,20 @@
 import moment from "moment";
 import "./styles.css";
 
-const CurrentWeather = ({ weather }) => {
+const CurrentWeather = ({ weather, info }) => {
+  console.log("weather", weather);
+  console.log("info", info);
   return (
     <div>
       <div className="sul-box-raised-3 location-container">
         <div className="location">
-          {weather.name}, {weather.sys.country}
+          {info.name}, {info.country}
         </div>
-        <div className="temperature">{Math.round(weather.main.temp)}°C</div>
+        <div className="temperature">{Math.round(weather.temp.day)}°C</div>
         <div className="weather">{weather.weather[0].description}</div>
       </div>
       <div className="current-date">
-        {moment(new Date()).format("dddd - ll")}
+        {moment(weather.dt * 1000).format("dddd - ll")}
       </div>
     </div>
   );

@@ -14,7 +14,20 @@ const SearchField = ({ setWeather, api, setErrors }) => {
           } else {
             setQuery("");
             setErrors("");
-            setWeather(result);
+            const coord = result.coord;
+            const info = { name: result.name, country: result.sys.country };
+
+            fetch(
+              `${api.base}onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely&units=metric&APPID=${api.key}`
+            )
+              .then((res) => res.json())
+              .then((result) => {
+                setWeather({
+                  hourly: result.hourly.slice(1, 4),
+                  daily: result.daily,
+                  info,
+                });
+              });
           }
         });
     }

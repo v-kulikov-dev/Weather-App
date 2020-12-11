@@ -1,7 +1,7 @@
 import moment from "moment";
 import "./styles.css";
 
-const HourItem = ({ hour, api, key }) => {
+const HourItem = ({ hour, api }) => {
   const time = moment(hour.dt * 1000).format("hh a");
   const image = `${api.image}${hour.weather[0].icon}@2x.png`;
 
