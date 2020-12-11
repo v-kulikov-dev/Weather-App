@@ -15,12 +15,13 @@ const api = {
 
 const MainScreen = () => {
   const [weather, setWeather] = useState({});
+  const [errors, setErrors] = useState("");
 
   return (
     <div className="app-container">
       <Header />
       <main>
-        <SearchField setWeather={setWeather} api={api} />
+        <SearchField setWeather={setWeather} api={api} setErrors={setErrors} />
         {typeof weather.main !== "undefined" && (
           <div className="sul-box-raised-3 container">
             <CurrentWeather weather={weather} />
@@ -28,6 +29,7 @@ const MainScreen = () => {
             <AdditionallyDashboard weather={weather} />
           </div>
         )}
+        {errors && <div className="sul-box-raised-1 error">{errors}</div>}
       </main>
     </div>
   );

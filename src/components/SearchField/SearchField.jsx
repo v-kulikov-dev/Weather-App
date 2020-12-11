@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SearchField = ({ setWeather, api }) => {
+const SearchField = ({ setWeather, api, setErrors }) => {
   const [query, setQuery] = useState("");
 
   const handleChange = () => {
@@ -8,8 +8,14 @@ const SearchField = ({ setWeather, api }) => {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
         .then((result) => {
-          setQuery("");
-          setWeather(result);
+          if (result.cod === "404") {
+            setErrors(result.message);
+            setWeather({});
+          } else {
+            setQuery("");
+            setErrors("");
+            setWeather(result);
+          }
         });
     }
   };
