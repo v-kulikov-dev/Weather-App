@@ -18,6 +18,7 @@ const api = {
 const MainScreen = () => {
   const [weather, setWeather] = useState({});
   const [errors, setErrors] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const responsiveConfig = {
     desktop: {
@@ -47,6 +48,9 @@ const MainScreen = () => {
               centerMode={false}
               className=""
               containerClass="container-with-dots"
+              afterChange={(previousSlide, _ref) =>
+                setCurrentSlide(_ref.currentSlide)
+              }
               dotListClass=""
               draggable
               focusOnSelect={false}
@@ -62,11 +66,13 @@ const MainScreen = () => {
               responsive={responsiveConfig}
             >
               {weather.daily.map((day, idx) => {
-                return <CurrentWeather weather={day} info={weather.info} />;
+                return (
+                  <CurrentWeather weather={day} info={weather.info} idx={idx} />
+                );
               })}
             </Carousel>
             <HourlyForecast weather={weather.hourly} api={api} />
-            <AdditionallyDashboard weather={weather.daily[0]} />
+            <AdditionallyDashboard weather={weather.daily[currentSlide]} />
           </div>
         )}
         {errors && <div className="sul-box-raised-1 error">{errors}</div>}

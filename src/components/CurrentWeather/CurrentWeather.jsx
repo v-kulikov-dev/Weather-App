@@ -1,9 +1,9 @@
 import moment from "moment";
 import "./styles.css";
 
-const CurrentWeather = ({ weather, info }) => {
+const CurrentWeather = ({ weather, info, idx }) => {
   return (
-    <div>
+    <div key={weather.dt}>
       <div className="sul-box-raised-3 location-container">
         <div className="location">
           {info.name}, {info.country}
