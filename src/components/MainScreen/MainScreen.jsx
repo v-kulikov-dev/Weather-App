@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import HourlyForecast from "../HourlyForecast";
 import CurrentWeather from "../CurrentWeather";
 import AdditionallyDashboard from "../AdditionallyDashboard";
@@ -8,6 +8,7 @@ import Carousel from "react-multi-carousel";
 import keys from "../../helpers/keys";
 import "react-multi-carousel/lib/styles.css";
 import "./styles.css";
+import { withRouter } from "react-router";
 
 const api = {
   key: keys.API_KEY,
@@ -15,10 +16,17 @@ const api = {
   image: keys.IMAGES_URL,
 };
 
-const MainScreen = () => {
+const MainScreen = ({ history }) => {
   const [weather, setWeather] = useState({});
   const [errors, setErrors] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleChange = useCallback(
+    (info) => {
+      history.push(`/${info}`);
+    },
+    [history]
+  );
 
   const responsiveConfig = {
     desktop: {
@@ -65,9 +73,16 @@ const MainScreen = () => {
               swipeable
               responsive={responsiveConfig}
             >
-              {weather.daily.map((day, idx) => {
+              {weather.daily.map((day) => {
                 return (
-                  <CurrentWeather weather={day} info={weather.info} idx={idx} />
+                  <CurrentWeather
+                    key={day.dt}
+                    weather={day}
+                    info={weather.info}
+                    currentDay={weather.current}
+                    currentSlide={currentSlide}
+                    onClick={() => handleChange(day.dt)}
+                  />
                 );
               })}
             </Carousel>
@@ -81,4 +96,4 @@ const MainScreen = () => {
   );
 };
 
-export default MainScreen;
+export default withRouter(MainScreen);

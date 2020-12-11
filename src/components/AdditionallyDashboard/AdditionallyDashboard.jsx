@@ -8,29 +8,29 @@ const AdditionallyDashboard = ({ weather }) => {
         className="additionally-wrapper"
         style={{ borderBottom: "3px #c4c4c4 solid" }}
       >
-        <div>
+        <div className="additionally-items">
           <p className="additionally-mark">{UTCToTime(weather.sunrise)}</p>
           <p className="additionally-key">sunrise</p>
         </div>
-        <div>
+        <div className="additionally-items">
           <p className="additionally-mark">{UTCToTime(weather.sunset)}</p>
           <p className="additionally-key">sunset</p>
         </div>
-        <div>
+        <div className="additionally-items">
           <p className="additionally-mark">{weather.pressure}hPa</p>
           <p className="additionally-key">pressure</p>
         </div>
       </div>
       <div className="additionally-wrapper">
-        <div>
+        <div className="additionally-items">
           <p className="additionally-mark">{weather.humidity}%</p>
           <p className="additionally-key">humidity</p>
         </div>
-        <div>
+        <div className="additionally-items">
           <p className="additionally-mark">{weather.clouds}%</p>
           <p className="additionally-key">clouds</p>
         </div>
-        <div>
+        <div className="additionally-items">
           <p className="additionally-mark">
             {Math.round(weather.feels_like.day)}°C
           </p>
