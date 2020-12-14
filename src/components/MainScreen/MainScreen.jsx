@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import HourlyForecast from "../HourlyForecast";
 import CurrentWeather from "../CurrentWeather";
 import AdditionallyDashboard from "../AdditionallyDashboard";
@@ -16,17 +16,9 @@ const api = {
   image: keys.IMAGES_URL,
 };
 
-const MainScreen = ({ history }) => {
-  const [weather, setWeather] = useState({});
+const MainScreen = ({ weather, setWeather }) => {
   const [errors, setErrors] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const handleChange = useCallback(
-    (info) => {
-      history.push(`/${info}`);
-    },
-    [history]
-  );
 
   const responsiveConfig = {
     desktop: {
@@ -44,7 +36,7 @@ const MainScreen = ({ history }) => {
   };
 
   return (
-    <div className="app-container">
+    <>
       <Header />
       <main>
         <SearchField setWeather={setWeather} api={api} setErrors={setErrors} />
@@ -81,7 +73,6 @@ const MainScreen = ({ history }) => {
                     info={weather.info}
                     currentDay={weather.current}
                     currentSlide={currentSlide}
-                    onClick={() => handleChange(day.dt)}
                   />
                 );
               })}
@@ -92,7 +83,7 @@ const MainScreen = ({ history }) => {
         )}
         {errors && <div className="sul-box-raised-1 error">{errors}</div>}
       </main>
-    </div>
+    </>
   );
 };
 

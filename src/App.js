@@ -1,16 +1,23 @@
+import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
 import MainScreen from "./components/MainScreen";
-import OneDayForecast from "./components/OneDayForecast";
+import HourlyDashboard from "./components/HourlyDashboard";
 
 const App = () => {
+  const [weather, setWeather] = useState({});
+
   return (
-    <>
+    <div className="app-container">
       <Switch>
-        <Route exact path="/" component={MainScreen} />
-        <Route path={"/day/:page"} component={OneDayForecast} />
+        <Route exact path="/">
+          <MainScreen weather={weather} setWeather={setWeather} />
+        </Route>
+        <Route path="/daily">
+          <HourlyDashboard weather={weather.hourly} />
+        </Route>
       </Switch>
-    </>
+    </div>
   );
 };
 

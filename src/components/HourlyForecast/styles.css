@@ -9,3 +9,9 @@
 .hour-item-wrapper {
   flex: 1;
 }
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}

@@ -24,7 +24,7 @@ const SearchField = ({ setWeather, api, setErrors }) => {
               .then((result) => {
                 setWeather({
                   current: result.current,
-                  hourly: result.hourly.slice(1, 4),
+                  hourly: result.hourly,
                   daily: result.daily,
                   info,
                 });

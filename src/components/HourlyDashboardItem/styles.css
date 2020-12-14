@@ -1,0 +1,26 @@
+.hour-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.hour-wrapper img {
+  width: 60px;
+  flex: 1;
+}
+
+.main {
+  flex: 2;
+}
+
+.temperature-dashboard {
+  flex: 1;
+}
+
+.date {
+  flex: 3;
+  text-align: center;
+}
