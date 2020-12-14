@@ -1,5 +1,5 @@
 import moment from "moment";
-import "./styles.css";
+import "./styles.scss";
 
 const HourItem = ({ hour, api }) => {
   const time = moment(hour.dt * 1000).format("hh a");

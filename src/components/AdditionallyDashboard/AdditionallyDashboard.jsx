@@ -1,13 +1,10 @@
 import { UTCToTime } from "../../helpers/datePicker";
-import "./styles.css";
+import "./styles.scss";
 
 const AdditionallyDashboard = ({ weather }) => {
   return (
     <div className="sul-box-raised-3">
-      <div
-        className="additionally-wrapper"
-        style={{ borderBottom: "3px #c4c4c4 solid" }}
-      >
+      <div className="additionally-wrapper">
         <div className="additionally-items">
           <p className="additionally-mark">{UTCToTime(weather.sunrise)}</p>
           <p className="additionally-key">sunrise</p>

@@ -1,6 +1,6 @@
-import "./styles.css";
 import moment from "moment";
 import keys from "../../helpers/keys";
+import "./styles.scss";
 
 const HourlyDashboardItem = ({ hourWeather }) => {
   const image = `${keys.IMAGES_URL}${hourWeather.weather[0].icon}@2x.png`;

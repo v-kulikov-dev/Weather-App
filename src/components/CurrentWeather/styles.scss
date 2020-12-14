@@ -7,19 +7,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
 
-.location {
-  font-size: 35px;
-  cursor: pointer;
-}
+  .location {
+    font-size: 35px;
+    cursor: pointer;
+  }
 
-.temperature {
-  font-size: 40px;
-}
+  .temperature {
+    font-size: 40px;
+  }
 
-.weather {
-  font-size: 20px;
+  .weather {
+    font-size: 20px;
+  }
 }
 
 .current-date {

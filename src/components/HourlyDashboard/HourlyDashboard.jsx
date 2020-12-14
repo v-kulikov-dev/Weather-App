@@ -1,6 +1,6 @@
 import { withRouter } from "react-router";
 import HourlyDashboardItem from "../HourlyDashboardItem";
-import "./styles.css";
+import "./styles.scss";
 
 const HourlyDashboard = ({ history, weather }) => {
   if (!weather) {

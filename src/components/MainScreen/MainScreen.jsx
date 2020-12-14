@@ -7,7 +7,7 @@ import SearchField from "../SearchField";
 import Carousel from "react-multi-carousel";
 import keys from "../../helpers/keys";
 import "react-multi-carousel/lib/styles.css";
-import "./styles.css";
+import "./styles.scss";
 import { withRouter } from "react-router";
 
 const api = {

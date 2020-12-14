@@ -1,5 +1,5 @@
 import moment from "moment";
-import "./styles.css";
+import "./styles.scss";
 
 const CurrentWeather = ({
   weather,

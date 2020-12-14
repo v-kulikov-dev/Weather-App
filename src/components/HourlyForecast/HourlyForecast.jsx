@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import HourItem from "../HourItem";
-import "./styles.css";
+import "./styles.scss";
 import { withRouter } from "react-router";
 
 const HourlyForecast = ({ history, weather, api }) => {

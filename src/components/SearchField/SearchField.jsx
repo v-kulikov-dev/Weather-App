@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.scss";
 
 const SearchField = ({ setWeather, api, setErrors }) => {
   const [query, setQuery] = useState("");
