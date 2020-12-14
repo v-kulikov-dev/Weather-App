@@ -1,43 +1,12 @@
 import { useState } from "react";
 import "./styles.scss";
 
-const SearchField = ({ setWeather, api, setErrors }) => {
+const SearchField = ({ handleChange }) => {
   const [query, setQuery] = useState("");
-
-  const handleChange = () => {
-    if (query.trim()) {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then((res) => res.json())
-        .then((result) => {
-          if (result.cod === "404") {
-            setErrors(result.message);
-            setWeather({});
-          } else {
-            setQuery("");
-            setErrors("");
-            const coord = result.coord;
-            const info = { name: result.name, country: result.sys.country };
-
-            fetch(
-              `${api.base}onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely&units=metric&APPID=${api.key}`
-            )
-              .then((res) => res.json())
-              .then((result) => {
-                setWeather({
-                  current: result.current,
-                  hourly: result.hourly,
-                  daily: result.daily,
-                  info,
-                });
-              });
-          }
-        });
-    }
-  };
 
   const search = (e) => {
     if (e.key === "Enter") {
-      handleChange();
+      handleChange(query);
     }
   };
 
@@ -51,7 +20,7 @@ const SearchField = ({ setWeather, api, setErrors }) => {
         value={query}
         onKeyPress={search}
       />
-      <button className="sul-btn" onClick={handleChange}>
+      <button className="sul-btn" onClick={() => handleChange(query)}>
         search
       </button>
     </div>

@@ -3,7 +3,7 @@ import HourItem from "../HourItem";
 import "./styles.scss";
 import { withRouter } from "react-router";
 
-const HourlyForecast = ({ history, weather, api }) => {
+const HourlyForecast = ({ history, weather }) => {
   const handleChange = useCallback(() => {
     history.push("/daily");
   }, [history]);
@@ -14,7 +14,7 @@ const HourlyForecast = ({ history, weather, api }) => {
         {weather.slice(1, 4).map((hour) => {
           return (
             <div key={hour.dt} className="hour-item-wrapper">
-              <HourItem hour={hour} api={api} />
+              <HourItem hour={hour} />
             </div>
           );
         })}

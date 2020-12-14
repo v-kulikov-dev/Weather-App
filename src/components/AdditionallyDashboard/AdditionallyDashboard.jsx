@@ -4,7 +4,7 @@ import "./styles.scss";
 const AdditionallyDashboard = ({ weather }) => {
   return (
     <div className="sul-box-raised-3">
-      <div className="additionally-wrapper">
+      <div className="additionally-wrapper top">
         <div className="additionally-items">
           <p className="additionally-mark">{UTCToTime(weather.sunrise)}</p>
           <p className="additionally-key">sunrise</p>
