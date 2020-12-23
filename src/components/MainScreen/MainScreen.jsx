@@ -6,6 +6,7 @@ import CurrentWeather from "../CurrentWeather";
 import AdditionallyDashboard from "../AdditionallyDashboard";
 import Header from "../Header";
 import SearchField from "../SearchField";
+import AlertsDashboard from "../AlertsDashboard";
 import { responsiveConfig } from "../../helpers/carouselConfig";
 import "react-multi-carousel/lib/styles.css";
 import "./styles.scss";
@@ -15,29 +16,27 @@ const MainScreen = ({ weather, setWeather }) => {
   const [errors, setErrors] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handleChange = useCallback((query) => {
-    if (query && query.trim()) {
-      getCurrentWeatherData(query).then((result) => {
-        if (result.cod === "404") {
-          setErrors(result.message);
-          setWeather({});
-        } else {
-          setErrors("");
-          const coord = result.coord;
-          const info = { name: result.name, country: result.sys.country };
+  const handleChange = useCallback(
+    (query) => {
+      if (query && query.trim()) {
+        getCurrentWeatherData(query).then((result) => {
+          if (result.cod === "404") {
+            setErrors(result.message);
+            setWeather({});
+          } else {
+            setErrors("");
+            const coord = result.coord;
+            const info = { name: result.name, country: result.sys.country };
 
-          getAllWeatherData(coord).then((result) => {
-            setWeather({
-              current: result.current,
-              hourly: result.hourly,
-              daily: result.daily,
-              info,
+            getAllWeatherData(coord).then((result) => {
+              setWeather({ ...result, info });
             });
-          });
-        }
-      });
-    }
-  }, []);
+          }
+        });
+      }
+    },
+    [setWeather]
+  );
 
   return (
     <>
@@ -77,6 +76,7 @@ const MainScreen = ({ weather, setWeather }) => {
                 );
               })}
             </Carousel>
+            {weather.alerts && <AlertsDashboard alerts={weather.alerts} />}
             <HourlyForecast weather={weather.hourly} />
             <AdditionallyDashboard weather={weather.daily[currentSlide]} />
           </div>
