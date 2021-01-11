@@ -76,7 +76,9 @@ const MainScreen = ({ weather, setWeather }) => {
                 );
               })}
             </Carousel>
-            {weather.alerts && <AlertsDashboard alerts={weather.alerts} />}
+            {weather.alerts && currentSlide === 0 && (
+              <AlertsDashboard alerts={weather.alerts} />
+            )}
             <HourlyForecast weather={weather.hourly} />
             <AdditionallyDashboard weather={weather.daily[currentSlide]} />
           </div>

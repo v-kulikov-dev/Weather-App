@@ -11,9 +11,6 @@ const AlertItem = ({ alert }) => {
     });
   }, [alert]);
 
-  console.log("period", period);
-  // console.log("alert", alert);
-
   return (
     <div className="sul-box-raised-3 alert-wrapper">
       <div className="sender">

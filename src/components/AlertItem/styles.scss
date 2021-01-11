@@ -1,12 +1,14 @@
 .alert-wrapper {
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 5px;
 
   .sender {
     margin-bottom: 5px;
   }
 
   .period {
+    margin-top: 5px;
     text-align: end;
   }
 }
