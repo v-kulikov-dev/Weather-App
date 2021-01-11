@@ -18,6 +18,12 @@ export const getAllWeatherData = (coord) => {
   ).then((res) => res.json());
 };
 
+export const getAirPollution = (lat, lon) => {
+  return fetch(
+    `${api.base}air_pollution?lat=${lat}&lon=${lon}&appid=${api.key}`,
+  ).then((res) => res.json());
+};
+
 export const getImages = (logo) => {
   return `${api.image}${logo}@2x.png`;
 };

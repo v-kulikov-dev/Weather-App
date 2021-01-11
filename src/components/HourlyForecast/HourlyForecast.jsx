@@ -6,8 +6,12 @@ import HourItem from '../HourItem';
 import './styles.scss';
 
 const HourlyForecast = ({ history, weather }) => {
-  const handleChange = useCallback(() => {
+  const goToDaily = useCallback(() => {
     history.push('/daily');
+  }, [history]);
+
+  const goToPollution = useCallback(() => {
+    history.push('/air-pollution');
   }, [history]);
 
   return (
@@ -22,8 +26,11 @@ const HourlyForecast = ({ history, weather }) => {
         })}
       </div>
       <div className="button-wrapper">
-        <button className="sul-btn" onClick={handleChange}>
+        <button className="sul-btn" onClick={goToDaily}>
           See 48 hour forecast
+        </button>
+        <button className="sul-btn" onClick={goToPollution}>
+          See Air Pollution For Now
         </button>
       </div>
     </div>

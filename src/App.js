@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { withRouter } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
 
+import AirPollution from './components/AirPollution';
 import HourlyDashboard from './components/HourlyDashboard';
 import MainScreen from './components/MainScreen';
 
@@ -16,6 +17,9 @@ const App = () => {
         </Route>
         <Route path="/daily">
           <HourlyDashboard weather={weather.hourly} />
+        </Route>
+        <Route path="/air-pollution">
+          <AirPollution lat={weather.lat} lon={weather.lon} />
         </Route>
       </Switch>
     </div>
