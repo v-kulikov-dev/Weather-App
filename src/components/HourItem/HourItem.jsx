@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
-import moment from "moment";
-import { getImages } from "../services";
-import "./styles.scss";
+import { useEffect, useState } from 'react';
+import moment from 'moment';
+
+import { getImages } from '../services';
+
+import './styles.scss';
 
 const HourItem = ({ hour }) => {
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState('');
   useEffect(() => {
-    setTime(moment(hour.dt * 1000).format("hh a"));
+    setTime(moment(hour.dt * 1000).format('hh a'));
   }, [hour]);
 
   return (

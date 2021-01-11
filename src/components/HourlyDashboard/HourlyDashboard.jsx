@@ -1,10 +1,12 @@
-import { withRouter } from "react-router";
-import HourlyDashboardItem from "../HourlyDashboardItem";
-import "./styles.scss";
+import { withRouter } from 'react-router';
+
+import HourlyDashboardItem from '../HourlyDashboardItem';
+
+import './styles.scss';
 
 const HourlyDashboard = ({ history, weather }) => {
   if (!weather) {
-    history.push("/");
+    history.push('/');
   }
 
   const goBack = () => {

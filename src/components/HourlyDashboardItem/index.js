@@ -1,1 +1,1 @@
-export { default } from "./HourlyDashboardItem";
+export { default } from './HourlyDashboardItem';

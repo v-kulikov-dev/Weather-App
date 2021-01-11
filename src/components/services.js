@@ -1,4 +1,4 @@
-import keys from "../helpers/keys";
+import keys from '../helpers/keys';
 
 const api = {
   key: keys.API_KEY,
@@ -8,13 +8,13 @@ const api = {
 
 export const getCurrentWeatherData = (query) => {
   return fetch(
-    `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
+    `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`,
   ).then((res) => res.json());
 };
 
 export const getAllWeatherData = (coord) => {
   return fetch(
-    `${api.base}onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely&units=metric&APPID=${api.key}`
+    `${api.base}onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely&units=metric&APPID=${api.key}`,
   ).then((res) => res.json());
 };
 

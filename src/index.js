@@ -1,16 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import "./index.scss";
-import "soft-ui-library/dist/css/neumorphism-ui.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+import './index.scss';
+import 'soft-ui-library/dist/css/neumorphism-ui.css';
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 reportWebVitals();

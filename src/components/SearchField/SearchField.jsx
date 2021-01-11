@@ -1,11 +1,12 @@
-import { useState } from "react";
-import "./styles.scss";
+import { useState } from 'react';
+
+import './styles.scss';
 
 const SearchField = ({ handleChange }) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   const search = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       handleChange(query);
     }
   };

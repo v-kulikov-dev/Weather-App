@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Route, Switch } from "react-router-dom";
-import { withRouter } from "react-router";
-import MainScreen from "./components/MainScreen";
-import HourlyDashboard from "./components/HourlyDashboard";
+import { useState } from 'react';
+import { withRouter } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
+
+import HourlyDashboard from './components/HourlyDashboard';
+import MainScreen from './components/MainScreen';
 
 const App = () => {
   const [weather, setWeather] = useState({});

@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import moment from "moment";
-import "./styles.scss";
+import { useEffect, useState } from 'react';
+import moment from 'moment';
+
+import './styles.scss';
 
 const CurrentWeather = ({
   weather,
@@ -9,18 +10,18 @@ const CurrentWeather = ({
   currentDay,
   onClick,
 }) => {
-  const [temperature, setTemperature] = useState("");
+  const [temperature, setTemperature] = useState('');
   const [description, setDescription] = useState([]);
 
   useEffect(() => {
     setTemperature(
-      Math.round(currentSlide === 0 ? currentDay.temp : weather.temp.day)
+      Math.round(currentSlide === 0 ? currentDay.temp : weather.temp.day),
     );
 
     setDescription(
       currentSlide === 0
         ? currentDay.weather[0].description
-        : weather.weather[0].description
+        : weather.weather[0].description,
     );
   }, [
     currentSlide,
@@ -40,8 +41,8 @@ const CurrentWeather = ({
         <div className="weather">{description}</div>
       </div>
       <div className="current-date">
-        {currentSlide === 0 && "Now: "}
-        {moment(weather.dt * 1000).format("dddd - ll")}
+        {currentSlide === 0 && 'Now: '}
+        {moment(weather.dt * 1000).format('dddd - ll')}
       </div>
     </div>
   );

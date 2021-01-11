@@ -1,4 +1,4 @@
-import moment from "moment";
+import moment from 'moment';
 
 export const dateBuild = () => {
   let date = String(new window.Date());
@@ -7,5 +7,5 @@ export const dateBuild = () => {
 };
 
 export const UTCToTime = (utc) => {
-  return moment(utc * 1000).format("hh:mma");
+  return moment(utc * 1000).format('hh:mma');
 };

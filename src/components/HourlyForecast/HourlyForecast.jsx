@@ -1,11 +1,13 @@
-import { useCallback } from "react";
-import HourItem from "../HourItem";
-import "./styles.scss";
-import { withRouter } from "react-router";
+import { useCallback } from 'react';
+import { withRouter } from 'react-router';
+
+import HourItem from '../HourItem';
+
+import './styles.scss';
 
 const HourlyForecast = ({ history, weather }) => {
   const handleChange = useCallback(() => {
-    history.push("/daily");
+    history.push('/daily');
   }, [history]);
 
   return (

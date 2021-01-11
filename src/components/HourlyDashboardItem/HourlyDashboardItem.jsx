@@ -1,6 +1,8 @@
-import moment from "moment";
-import { getImages } from "../services";
-import "./styles.scss";
+import moment from 'moment';
+
+import { getImages } from '../services';
+
+import './styles.scss';
 
 const HourlyDashboardItem = ({ hourWeather }) => {
   return (
@@ -11,7 +13,7 @@ const HourlyDashboardItem = ({ hourWeather }) => {
         {Math.round(hourWeather.temp)}°C
       </div>
       <div className="date">
-        {moment(hourWeather.dt * 1000).format("hh:mma dddd")}
+        {moment(hourWeather.dt * 1000).format('hh:mma dddd')}
       </div>
     </div>
   );

@@ -1,1 +1,1 @@
-export { default } from "./AlertsDashboard";
+export { default } from './AlertsDashboard';

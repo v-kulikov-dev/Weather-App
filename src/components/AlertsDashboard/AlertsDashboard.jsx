@@ -1,6 +1,8 @@
-import { Fragment } from "react";
-import AlertItem from "../AlertItem";
-import "./styles.scss";
+import { Fragment } from 'react';
+
+import AlertItem from '../AlertItem';
+
+import './styles.scss';
 
 const AlertsDashboard = ({ alerts }) => {
   return (

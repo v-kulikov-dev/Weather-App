@@ -1,30 +1,32 @@
-import { useState, useCallback } from "react";
-import { withRouter } from "react-router";
-import Carousel from "react-multi-carousel";
-import HourlyForecast from "../HourlyForecast";
-import CurrentWeather from "../CurrentWeather";
-import AdditionallyDashboard from "../AdditionallyDashboard";
-import Header from "../Header";
-import SearchField from "../SearchField";
-import AlertsDashboard from "../AlertsDashboard";
-import { responsiveConfig } from "../../helpers/carouselConfig";
-import "react-multi-carousel/lib/styles.css";
-import "./styles.scss";
-import { getAllWeatherData, getCurrentWeatherData } from "../services";
+import { useCallback, useState } from 'react';
+import Carousel from 'react-multi-carousel';
+import { withRouter } from 'react-router';
+
+import { responsiveConfig } from '../../helpers/carouselConfig';
+import AdditionallyDashboard from '../AdditionallyDashboard';
+import AlertsDashboard from '../AlertsDashboard';
+import CurrentWeather from '../CurrentWeather';
+import Header from '../Header';
+import HourlyForecast from '../HourlyForecast';
+import SearchField from '../SearchField';
+import { getAllWeatherData, getCurrentWeatherData } from '../services';
+
+import 'react-multi-carousel/lib/styles.css';
+import './styles.scss';
 
 const MainScreen = ({ weather, setWeather }) => {
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleChange = useCallback(
     (query) => {
       if (query && query.trim()) {
         getCurrentWeatherData(query).then((result) => {
-          if (result.cod === "404") {
+          if (result.cod === '404') {
             setErrors(result.message);
             setWeather({});
           } else {
-            setErrors("");
+            setErrors('');
             const coord = result.coord;
             const info = { name: result.name, country: result.sys.country };
 
@@ -35,7 +37,7 @@ const MainScreen = ({ weather, setWeather }) => {
         });
       }
     },
-    [setWeather]
+    [setWeather],
   );
 
   return (
