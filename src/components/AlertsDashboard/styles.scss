@@ -2,9 +2,15 @@
   display: flex;
   padding: 30px 20px 0;
   flex-direction: column;
+  animation: alerts 1.5s;
 
   h2 {
     text-align: center;
     margin-bottom: 10px;
   }
+}
+
+@keyframes alerts {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }

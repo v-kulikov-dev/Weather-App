@@ -1,9 +1,17 @@
 .container {
   padding: 30px 0 0;
+  animation: main 1.5s;
+
 }
 
 .error {
   padding: 20px;
   text-align: center;
   color: orange;
+  animation: main 1.5s;
+}
+
+@keyframes main {
+  0%   { opacity: 0}
+  100% { opacity: 1}
 }
