@@ -40,11 +40,17 @@ const AirPollution = ({ history, lat, lon }) => {
         <BackToSearchButton />
       </div>
       <div className="sul-box-raised-3 pollutions-list">
+        <div className="sul-box-raised-3 aqi">
+          <div className="aqi__title">
+            AQI - Air Quality Index. Possible values: 1, 2, 3, 4, 5. Where 1 =
+            Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor.
+          </div>
+          <div className="aqi__value">{airQualityIndex.aqi}</div>
+        </div>
         {pollutions.length &&
           pollutions.map((pollution, index) => (
             <PollutionItem pollution={pollution} key={index} />
           ))}
-        <div>aqi {airQualityIndex.aqi}</div>
       </div>
     </>
   );

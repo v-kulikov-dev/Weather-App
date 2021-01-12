@@ -10,6 +10,32 @@
 
 .pollutions-list {
   padding: 30px 0;
+  animation: pollution 1.5s;
+
+  .aqi {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    align-items: center;
+    height: 75px;
+
+    &__title {
+      width: 70%;
+    }
+
+    &__value {
+      font-size: 20px;
+      border-radius: 50%;
+      background-color: #0086cc;
+      align-items: center;
+      height: 55px;
+      width: 55px;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
 @keyframes pollution {
