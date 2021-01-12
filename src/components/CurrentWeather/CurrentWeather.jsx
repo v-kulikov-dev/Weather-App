@@ -13,6 +13,26 @@ const CurrentWeather = ({
   const [temperature, setTemperature] = useState('');
   const [description, setDescription] = useState([]);
 
+  const currentMainWeather = () => {
+    const mainWeather = weather.weather[0].main;
+    switch (mainWeather) {
+      case 'Snow':
+        return 'red';
+      case 'Rain':
+        return 'green';
+      case 'Clear':
+        return 'gray';
+      case 'Thunderstorm':
+        return 'gray';
+      case 'Drizzle':
+        return 'gray';
+      case 'Clouds':
+        return 'gray';
+      default:
+        return 'transparent';
+    }
+  };
+
   useEffect(() => {
     setTemperature(
       Math.round(currentSlide === 0 ? currentDay.temp : weather.temp.day),
@@ -33,7 +53,10 @@ const CurrentWeather = ({
 
   return (
     <div key={weather.dt}>
-      <div className="sul-box-raised-3 location-container">
+      <div
+        className="sul-box-raised-3 location-container"
+        style={{ backgroundColor: currentMainWeather() }}
+      >
         <div className="location" onClick={onClick}>
           {info.name}, {info.country}
         </div>

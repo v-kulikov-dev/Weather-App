@@ -1,7 +1,7 @@
 .forecast-container {
   display: flex;
   text-align: center;
-  height: 250px;
+  height: 240px;
   align-items: center;
   margin-top: 20px;
   border-radius: 4px;
@@ -9,6 +9,13 @@
   .hour-item-wrapper {
     flex: 1;
   }
+}
+
+.forecast {
+  margin: 0 auto;
+  padding: 10px 20px !important;
+  border-radius: 20px;
+  box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow) !important;
 }
 
 .button-wrapper {

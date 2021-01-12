@@ -15,25 +15,27 @@ const HourlyForecast = ({ history, weather }) => {
   }, [history]);
 
   return (
-    <div>
-      <div className="forecast-container sul-box-inset-1">
-        {weather.slice(1, 4).map((hour) => {
-          return (
-            <div key={hour.dt} className="hour-item-wrapper">
-              <HourItem hour={hour} />
-            </div>
-          );
-        })}
-      </div>
-      <div className="button-wrapper">
-        <button className="sul-btn" onClick={goToDaily}>
+    <>
+      <div className="sul-box-inset-1">
+        <div className="forecast-container">
+          {weather.slice(1, 4).map((hour) => {
+            return (
+              <div key={hour.dt} className="hour-item-wrapper">
+                <HourItem hour={hour} />
+              </div>
+            );
+          })}
+        </div>
+        <button className="sul-btn forecast" onClick={goToDaily}>
           See 48 hour forecast
         </button>
+      </div>
+      <div className="button-wrapper">
         <button className="sul-btn" onClick={goToPollution}>
           See Air Pollution For Now
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
