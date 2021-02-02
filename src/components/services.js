@@ -7,9 +7,13 @@ const api = {
 };
 
 export const getCurrentWeatherData = (query) => {
-  return fetch(
-    `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`,
-  ).then((res) => res.json());
+  let url;
+  if (typeof query === 'object') {
+    url = `${api.base}weather?lat=${query.lat}&lon=${query.lon}&units=metric&APPID=${api.key}`;
+  } else {
+    url = `${api.base}weather?q=${query.trim()}&units=metric&APPID=${api.key}`;
+  }
+  return fetch(url).then((res) => res.json());
 };
 
 export const getAllWeatherData = (coord) => {

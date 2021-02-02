@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import { withRouter } from 'react-router';
 
@@ -14,13 +14,13 @@ import { getAllWeatherData, getCurrentWeatherData } from '../services';
 import 'react-multi-carousel/lib/styles.css';
 import './styles.scss';
 
-const MainScreen = ({ weather, setWeather }) => {
+const MainScreen = ({ weather, setWeather, userLocation }) => {
   const [errors, setErrors] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleChange = useCallback(
     (query) => {
-      if (query && query.trim()) {
+      if (query) {
         getCurrentWeatherData(query).then((result) => {
           if (result.cod === '404') {
             setErrors(result.message);
@@ -39,6 +39,12 @@ const MainScreen = ({ weather, setWeather }) => {
     },
     [setWeather],
   );
+
+  useEffect(() => {
+    if (userLocation.lat && userLocation.lon) {
+      handleChange(userLocation);
+    }
+  }, [handleChange, userLocation]);
 
   return (
     <>
