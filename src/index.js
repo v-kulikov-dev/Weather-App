@@ -4,9 +4,12 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorker from './service-worker';
 
 import './index.scss';
 import 'soft-ui-library/dist/css/neumorphism-ui.css';
+
+serviceWorker.register();
 
 ReactDOM.render(
   <BrowserRouter>
@@ -14,5 +17,4 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root'),
 );
-
 reportWebVitals();
