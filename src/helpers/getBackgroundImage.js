@@ -5,13 +5,8 @@ import Rain from '../assets/Rain-min.png';
 import Snow from '../assets/Snow-min.png';
 import Thunderstorm from '../assets/Thunderstorm-min.png';
 
-export const getBackgroundImage = (
-  weather,
-  currentSlide = null,
-  currentDay = null,
-) => {
-  const mainWeather =
-    currentSlide === 0 ? currentDay.weather[0].main : weather.weather[0].main;
+export const getBackgroundImage = (weather) => {
+  const mainWeather = weather.weather[0].main;
   switch (mainWeather) {
     case 'Snow':
       return Snow;

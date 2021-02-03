@@ -5,44 +5,21 @@ import { getBackgroundImage } from '../../helpers/getBackgroundImage';
 
 import './styles.scss';
 
-const CurrentWeather = ({
-  weather,
-  info,
-  currentSlide,
-  currentDay,
-  onClick,
-}) => {
+const CurrentWeather = ({ weather, info, currentSlide, onClick }) => {
   const [temperature, setTemperature] = useState('');
   const [description, setDescription] = useState([]);
 
   useEffect(() => {
-    setTemperature(
-      Math.round(currentSlide === 0 ? currentDay.temp : weather.temp.day),
-    );
-
-    setDescription(
-      currentSlide === 0
-        ? currentDay.weather[0].description
-        : weather.weather[0].description,
-    );
-  }, [
-    currentSlide,
-    currentDay.weather,
-    weather.temp.day,
-    currentDay.temp,
-    weather.weather,
-  ]);
+    setTemperature(Math.round(weather.temp.day));
+    setDescription(weather.weather[0].description);
+  }, [weather.temp.day, weather.weather]);
 
   return (
     <div key={weather.dt}>
       <div
         className="sul-box-raised-3 location-container"
         style={{
-          backgroundImage: `url(${getBackgroundImage(
-            weather,
-            currentSlide,
-            currentDay,
-          )})`,
+          backgroundImage: `url(${getBackgroundImage(weather)})`,
         }}
       >
         <div className="location" onClick={onClick}>

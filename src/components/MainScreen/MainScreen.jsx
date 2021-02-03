@@ -78,7 +78,6 @@ const MainScreen = ({ weather, setWeather, userLocation }) => {
                     key={day.dt}
                     weather={day}
                     info={weather.info}
-                    currentDay={weather.current}
                     currentSlide={currentSlide}
                   />
                 );

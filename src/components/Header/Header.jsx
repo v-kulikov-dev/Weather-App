@@ -1,12 +1,6 @@
-const Header = () => {
-  const changeMode = (e) => {
-    if (!e.target.checked) {
-      document.body.classList.replace('dark-mode', 'light-mode');
-    } else {
-      document.body.classList.replace('light-mode', 'dark-mode');
-    }
-  };
+import { changeMode } from '../../helpers/changeTheme';
 
+const Header = () => {
   return (
     <header className="sul-box-raised-2">
       <h1>Weather App.</h1>
