@@ -26,3 +26,15 @@
     text-align: center;
   }
 }
+
+@media (max-width: 767px) {
+  .hour-wrapper {
+    margin: 10px;
+    padding: 0 10px;
+
+    img {
+      width: 50px;
+      border-radius: 5px;
+    }
+  }
+}

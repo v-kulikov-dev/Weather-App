@@ -22,3 +22,16 @@
   100% { opacity: 1; }
 }
 
+@media (max-width: 767px) {
+  .hourly-dashboard-wrapper {
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .hour-list {
+    font-size: 14px;
+    padding: 20px 0;
+  }
+}
+

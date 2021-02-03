@@ -12,3 +12,9 @@
     text-align: end;
   }
 }
+
+@media (max-width: 767px) {
+  .alert-wrapper {
+      font-size: 14px;
+  }
+}

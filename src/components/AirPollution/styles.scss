@@ -21,6 +21,10 @@
     align-items: center;
     height: 75px;
 
+    br {
+      display: none;
+    }
+
     &__title {
       width: 70%;
     }
@@ -44,6 +48,26 @@
   }
   100% {
     opacity: 1
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .pollutions-list {
+    font-size: 14px;
+
+    .aqi {
+      margin: 10px;
+      padding: 0 10px;
+      height: 165px;
+
+      br {
+        display: block;
+      }
+    }
   }
 }
 

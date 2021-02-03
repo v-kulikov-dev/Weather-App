@@ -13,5 +13,18 @@
   .weather-logo img {
     height: 50px;
   }
+}
 
+@media (max-width: 767px) {
+  .forecast-item {
+    margin: 0 10px;
+    flex-direction: row;
+    height: 50px;
+    border-radius: 5px;
+    align-items: center;
+
+    .item-temperature {
+      font-size: 26px;
+    }
+  }
 }

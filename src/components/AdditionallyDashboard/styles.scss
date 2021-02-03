@@ -21,3 +21,19 @@
 .top {
   border-bottom: 3px #c4c4c4 solid;
 }
+
+@media (max-width: 767px) {
+  .additionally-wrapper {
+    margin: 0 10px;
+
+    .additionally-items {
+      .additionally-mark {
+        font-size: 14px;
+      }
+
+      .additionally-key {
+        font-size: 12px;
+      }
+    }
+  }
+}

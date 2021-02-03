@@ -7,3 +7,10 @@
   align-items: center;
   height: 75px;
 }
+
+@media (max-width: 767px) {
+  .pollution-wrapper {
+    margin: 10px;
+    padding: 0 10px;
+  }
+}

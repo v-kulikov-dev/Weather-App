@@ -23,3 +23,24 @@
   justify-content: space-around;
   padding: 15px;
 }
+
+@media (max-width: 767px) {
+  .forecast-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .hour-item-wrapper {
+      width: 100%;
+      flex: inherit;
+    }
+  }
+
+  .button-wrapper {
+    padding: 10px;
+
+    button {
+      padding: 10px;
+    }
+  }
+}

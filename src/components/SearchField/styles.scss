@@ -14,3 +14,18 @@
     flex: 1;
   }
 }
+
+@media (max-width: 767px) {
+  .search-container {
+    padding: 10px;
+
+    input {
+      flex: 3;
+      margin-right: 10px;
+    }
+
+    button {
+      font-size: 14px;
+    }
+  }
+}
