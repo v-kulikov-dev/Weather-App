@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HttpsRedirect from 'react-https-redirect';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
@@ -10,9 +11,11 @@ import './index.scss';
 import 'soft-ui-library/dist/css/neumorphism-ui.css';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <HttpsRedirect>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </HttpsRedirect>,
   document.getElementById('root'),
 );
 
