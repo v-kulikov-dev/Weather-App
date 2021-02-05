@@ -24,21 +24,17 @@
     br {
       display: none;
     }
+  }
 
-    &__title {
-      width: 70%;
-    }
+  .chart-wrapper {
+    height: 350px;
+    width: 100%;
+    position: relative;
 
-    &__value {
-      font-size: 20px;
-      border-radius: 50%;
-      background-color: #0086cc;
-      align-items: center;
-      height: 55px;
-      width: 55px;
-      display: flex;
-      justify-content: center;
-    }
+      & > div {
+        text-align: center;
+        margin-bottom: 20px;
+      }
   }
 }
 
@@ -67,6 +63,18 @@
       br {
         display: block;
       }
+    }
+
+    .chart-wrapper {
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .pollutions-list {
+    .chart-wrapper {
+      height: 200px;
     }
   }
 }

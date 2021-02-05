@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { withRouter } from 'react-router';
 
 import BackToSearchButton from '../BackToSearchButton';
+import DoughnutChart from '../DoughnutChart';
 import PollutionItem from '../PollutionItem';
 import { getAirPollution } from '../services';
 
@@ -40,18 +41,23 @@ const AirPollution = ({ history, lat, lon }) => {
         <BackToSearchButton />
       </div>
       <div className="sul-box-raised-3 pollutions-list">
+        <div className="chart-wrapper">
+          <DoughnutChart
+            pollutions={pollutions}
+            airQualityIndex={airQualityIndex}
+          />
+        </div>
         <div className="sul-box-raised-3 aqi">
           <div className="aqi__title">
             AQI - Air Quality Index. <br />
             Possible values: <br />
             1, 2, 3, 4, 5.
             <br /> Where 1 = Good,
-            <br />2 = Fair,
-            <br />3 = Moderate
-            <br />4 = Poor
-            <br />5 = Very Poor.
+            <br /> 2 = Fair,
+            <br /> 3 = Moderate,
+            <br /> 4 = Poor,
+            <br /> 5 = Very Poor.
           </div>
-          <div className="aqi__value">{airQualityIndex.aqi}</div>
         </div>
         {pollutions.length &&
           pollutions.map((pollution, index) => (
