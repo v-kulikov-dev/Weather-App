@@ -1,6 +1,7 @@
 import { withRouter } from 'react-router';
 
 import BackToSearchButton from '../BackToSearchButton';
+import LineChart from '../charts/LineChart';
 import HourlyDashboardItem from '../HourlyDashboardItem';
 
 import './styles.scss';
@@ -17,6 +18,7 @@ const HourlyDashboard = ({ history, weather }) => {
         <BackToSearchButton />
       </div>
       <div className="sul-box-raised-3 hour-list">
+        <LineChart weather={weather} />
         {weather &&
           weather.map((el) => {
             return <HourlyDashboardItem hourWeather={el} key={el.dt} />;

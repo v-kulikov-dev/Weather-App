@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { withRouter } from 'react-router';
 
 import BackToSearchButton from '../BackToSearchButton';
-import DoughnutChart from '../DoughnutChart';
+import DoughnutChart from '../charts/DoughnutChart';
 import PollutionItem from '../PollutionItem';
 import { getAirPollution } from '../services';
 

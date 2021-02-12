@@ -7,11 +7,15 @@ const AdditionallyDashboard = ({ weather }) => {
     <div className="sul-box-raised-3">
       <div className="additionally-wrapper top">
         <div className="additionally-items">
-          <p className="additionally-mark">{UTCToTime(weather.sunrise)}</p>
+          <p className="additionally-mark">
+            {UTCToTime(weather.sunrise, 'hh:mma')}
+          </p>
           <p className="additionally-key">sunrise</p>
         </div>
         <div className="additionally-items">
-          <p className="additionally-mark">{UTCToTime(weather.sunset)}</p>
+          <p className="additionally-mark">
+            {UTCToTime(weather.sunset, 'hh:mma')}
+          </p>
           <p className="additionally-key">sunset</p>
         </div>
         <div className="additionally-items">

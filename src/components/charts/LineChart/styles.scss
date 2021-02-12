@@ -1,0 +1,14 @@
+.line-chart-wrapper {
+  height: 350px;
+  padding: 0 30px;
+
+  @media (max-width: 767px) {
+    height: 180px;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 374px) {
+    height: 150px;
+    padding: 0 10px;
+  }
+}

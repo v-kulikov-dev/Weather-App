@@ -6,6 +6,6 @@ export const dateBuild = () => {
   return date;
 };
 
-export const UTCToTime = (utc) => {
-  return moment(utc * 1000).format('hh:mma');
+export const UTCToTime = (utc, format) => {
+  return moment(utc * 1000).format(format);
 };
