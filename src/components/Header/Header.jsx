@@ -1,4 +1,4 @@
-import { changeMode } from '../../helpers/changeTheme';
+import { changeMode } from '../../helpers/changeMode';
 
 const Header = () => {
   return (

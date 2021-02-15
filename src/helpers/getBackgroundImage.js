@@ -6,7 +6,7 @@ import Snow from '../assets/Snow-min.png';
 import Thunderstorm from '../assets/Thunderstorm-min.png';
 
 export const getBackgroundImage = (weather) => {
-  const mainWeather = weather.weather[0].main;
+  const mainWeather = weather?.weather[0]?.main;
   switch (mainWeather) {
     case 'Snow':
       return Snow;
@@ -21,6 +21,6 @@ export const getBackgroundImage = (weather) => {
     case 'Clouds':
       return Clouds;
     default:
-      return 'transparent';
+      return null;
   }
 };
